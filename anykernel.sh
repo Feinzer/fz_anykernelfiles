@@ -46,7 +46,7 @@ else
   insert_line init.bacon.rc "init.fz.rc" after "import /init.qcom.power.rc" "import /init.fz.rc";
   chmod 644 /init.fz.rc;
 fi
-
+umount /system;
 # end ramdisk changes
 
 write_boot;
