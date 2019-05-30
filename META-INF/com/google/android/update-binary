@@ -63,6 +63,9 @@ bb=/tmp/anykernel/tools/busybox;
 chmod 755 $bb;
 $bb chmod -R 755 /tmp/anykernel/tools /tmp/anykernel/bin;
 
+ui_print " ";
+ui_print " AnyKernel2 by osm0sis @ xda-developers";
+ui_print " ";
 ui_print "==================================================";
 ui_print " ";
 if [ -f /tmp/anykernel/banner ]; then
@@ -79,8 +82,6 @@ if [ -f /tmp/anykernel/version ]; then
   ui_print " ";
 fi;
 ui_print "$(file_getprop /tmp/anykernel/anykernel.sh kernel.string)";
-ui_print " ";
-ui_print " AnyKernel2 by osm0sis @ xda-developers";
 ui_print " ";
 ui_print "==================================================";
 

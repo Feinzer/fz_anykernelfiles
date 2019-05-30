@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # EDIFY properties
 properties() {
-kernel.string= - by Feinzer @ GitHub
+kernel.string=               by Feinzer @ GitHub
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
