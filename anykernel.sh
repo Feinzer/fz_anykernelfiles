@@ -42,9 +42,8 @@ if [ -d /system ] && [ -f /system/vendor/etc/init/hw/init.qcom.power.rc ]; then
   insert_line /system/vendor/etc/init/hw/init.bacon.rc "init.fz" after "import /vendor/etc/init/hw/init.qcom-common.rc" "import /vendor/etc/init/hw/init.fz.rc";
   chmod 644 /system/vendor/etc/init/hw/init.fz.rc;
 else
-  ui_print "- Applying Fz init patch in /"
-  insert_line init.bacon.rc "init.fz" before "import /init.usb.rc" "import /init.fz.rc";
-  chmod 644 /init.fz.rc;
+  ui_print "- Applying Fz init patch in ramdisk"
+  insert_line init.rc "init.fz" before "import /init.usb.rc" "import /init.fz.rc";
 fi
 mount -o ro,remount -t auto /system;
 # end ramdisk changes
