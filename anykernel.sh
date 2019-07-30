@@ -41,9 +41,11 @@ if [ -d /system ] && [ -f /system/vendor/etc/init/hw/init.qcom.power.rc ]; then
   cp /tmp/anykernel/ramdisk/init.fz.rc /system/vendor/etc/init/hw/init.fz.rc;
   insert_line /system/vendor/etc/init/hw/init.bacon.rc "init.fz" after "import /vendor/etc/init/hw/init.qcom-common.rc" "import /vendor/etc/init/hw/init.fz.rc";
   chmod 644 /system/vendor/etc/init/hw/init.fz.rc;
+  replace_string /system/vendor/etc/init/hw/init.qcom.power.rc "#start mpdecision" "start mpdecision" "#start mpdecision";
 else
   ui_print "- Applying Fz init patch in ramdisk"
   insert_line init.rc "init.fz" before "import /init.usb.rc" "import /init.fz.rc";
+  replace_string init.qcom.power.rc "#start mpdecision" "start mpdecision" "#start mpdecision";
 fi
 mount -o ro,remount -t auto /system;
 # end ramdisk changes
